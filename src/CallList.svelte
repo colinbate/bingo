@@ -19,14 +19,14 @@ function pickNumber() {
 section {
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
   flex-direction: column;
+  align-items: center;
 }
 .mainball {
   width: 60vmin;
   height: 60vmin;
   margin: 10vmin 0;
+  flex: 0 0 auto;
 }
 button {
   border-radius: 3vmin;
@@ -44,11 +44,33 @@ button:not(:disabled):active {
   box-shadow: none;
   top: 0.15rem;
 }
+
+.crazy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (orientation: landscape) {
+  .crazy {
+    flex-direction: row;
+  }
+  .mainball {
+    width: 40vmin;
+    height: 40vmin;
+    margin: 8vmin;
+  }
+  button {
+    margin: 0 10vmin 0 0;
+  }
+}
 </style>
 <section>
-<div class="mainball">
-  {#if lastCalled}<Ball label={lastCalled} />{/if}
+<div class="crazy">
+  <div class="mainball">
+    {#if lastCalled}<Ball label={lastCalled} />{/if}
+  </div>
+  {#if remaining}<button type="button" on:click={pickNumber}>Pick Number</button>{/if}
 </div>
-{#if remaining}<button type="button" on:click={pickNumber}>Pick Number</button>{/if}
 <Called {list} />
 </section>
