@@ -14,12 +14,12 @@ article {
 </style>
 
 <article>
-  <h1>Bingo</h1>
+  <h1>American Bingo</h1>
 
   <p>
     Welcome to my simple bingo tools. These tools are designed to support a game of bingo
     taking place either in person or virtually over some additional channel, like a video,
-    audio or text chat.
+    audio or text chat. This is for American style Bingo, not the British style.
   </p>
 
   <p>
